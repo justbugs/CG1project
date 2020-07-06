@@ -1,3 +1,0 @@
-C:\CMake\bin\cmake.exe -E rm -f CMakeFiles\opengl-basic.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\opengl-basic.dir/objects.a @CMakeFiles\opengl-basic.dir\objects1.rsp
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE -g   -Wl,--whole-archive CMakeFiles\opengl-basic.dir/objects.a -Wl,--no-whole-archive  -o opengl-basic.exe -Wl,--out-implib,libopengl-basic.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\opengl-basic.dir\linklibs.rsp
