@@ -1,0 +1,4 @@
+C:/cg/CG1project/build/CMakeFiles/glad.dir
+C:/cg/CG1project/build/CMakeFiles/rebuild_cache.dir
+C:/cg/CG1project/build/CMakeFiles/opengl-basic.dir
+C:/cg/CG1project/build/CMakeFiles/edit_cache.dir

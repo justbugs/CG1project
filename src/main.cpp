@@ -255,7 +255,7 @@ int main()
 	std::vector<tinyobj::shape_t> shapes;
 	std::vector<tinyobj::material_t> materials;
 	std::string if_load_succeed = tinyobj::LoadObj(shapes, materials,
-		"../src/p.obj"
+		"../objects/p.obj"
 	);
 	std::vector<unsigned int> obj_VBO_l, obj_VAO_l;
 	for (int i = 0; i < shapes.size(); i++)
@@ -395,9 +395,9 @@ int main()
 	// You need to fill this function which is defined in my_texture.h. The parameter is the path of your image.   //
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	unsigned int texture1 = loadTexture("../src/container.jpg");
-	unsigned int texture2 = loadTexture("../src/normal_map.jpg");
-	unsigned int texture3 = loadTexture("../src/p_r.jpg");
+	unsigned int texture1 = loadTexture("../textures/container.jpg");
+	unsigned int texture2 = loadTexture("../textures/normal_map.jpg");
+	unsigned int texture3 = loadTexture("../textures/p_r.jpg");
 	
 
 
