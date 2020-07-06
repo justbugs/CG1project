@@ -257,6 +257,13 @@ int main()
 	std::string if_load_succeed = tinyobj::LoadObj(shapes, materials,
 		"../objects/p.obj"
 	);
+
+	std::vector<tinyobj::shape_t> shapes2;
+	std::vector<tinyobj::material_t> materials2;
+	std::string if_load_succeed2 = tinyobj::LoadObj(shapes2, materials2,
+		"../objects/apple.obj"
+	);
+
 	std::vector<unsigned int> obj_VBO_l, obj_VAO_l;
 	for (int i = 0; i < shapes.size(); i++)
 	{
@@ -311,6 +318,69 @@ int main()
 		obj_VBO_l.push_back(B);
 		
 	}
+
+
+
+	std::vector<unsigned int> obj_VBO_2, obj_VAO_2;
+	for (int i = 0; i < shapes.size(); i++)
+	{
+		
+		std::vector < glm::vec3 > out_vertices;
+		std::vector < glm::vec2 > out_uvs;
+		std::vector < glm::vec3 > out_normals;
+
+		// out_vertices, out_uvs, out_normals will get v, vt and vn.
+		make_face(shapes2[i].mesh.positions, shapes[i].mesh.texcoords, shapes2[i].mesh.normals, shapes2[i].mesh.indices,
+			out_vertices, out_normals, out_uvs);
+		std::vector <glm::vec3> out_tangant,out_bitangant;
+		cal_tang(out_vertices,out_uvs,out_tangant,out_bitangant);
+		int scale = shapes[i].mesh.indices.size();
+		float apple[scale*14];
+		for (int id =0;id<scale;id++){
+			int k = id*14;
+			int j = id/3;
+			apple[k]=out_vertices[id].x;
+			apple[k+1]=out_vertices[id].y;
+			apple[k+2]=out_vertices[id].z;
+			apple[k+3]=out_normals[id].x;
+			apple[k+4]=out_normals[id].y;
+			apple[k+5]=out_normals[id].z;
+			apple[k+6]=out_uvs[id].x;
+			apple[k+7]=out_uvs[id].y;
+			apple[k+8]=out_tangant[j].x;
+			apple[k+9]=out_tangant[j].y;
+			apple[k+10]=out_tangant[j].z;
+			apple[k+11]=out_bitangant[j].x;
+			apple[k+12]=out_bitangant[j].y;
+			apple[k+13]=out_bitangant[j].z;
+		}
+		unsigned int A,B;
+		glGenBuffers(1, &B);
+		glBindBuffer(GL_ARRAY_BUFFER, B);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(apple), apple, GL_STATIC_DRAW);
+		glGenVertexArrays(1, &A);
+		glBindVertexArray(A);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 14 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 14 * sizeof(float), (void*)(3*sizeof(float)));
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 14 * sizeof(float), (void*)(6*sizeof(float)));
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 14 * sizeof(float), (void*)(8*sizeof(float)));
+		glEnableVertexAttribArray(3);
+		glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, 14 * sizeof(float), (void*)(11*sizeof(float)));
+		glEnableVertexAttribArray(4);
+		glBindVertexArray(0);
+		obj_VAO_2.push_back(A);
+		obj_VBO_2.push_back(B);
+		
+	}
+
+
+
+
+
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Render a box to show nice normal mapping.                                                                   //
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -398,7 +468,7 @@ int main()
 	unsigned int texture1 = loadTexture("../textures/container.jpg");
 	unsigned int texture2 = loadTexture("../textures/normal_map.jpg");
 	unsigned int texture3 = loadTexture("../textures/p_r.jpg");
-	
+	unsigned int texture4 = loadTexture("../textures/blue.jpg");
 
 
 
@@ -516,31 +586,50 @@ int main()
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture1);
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, texture2);
-		glBindVertexArray(VAO);
-		glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 0); 
-	    glUniform1i(glGetUniformLocation(my_shader.ID, "normalMap"), 1);
-		my_shader.setBool("nm",false);
+
+		// glActiveTexture(GL_TEXTURE0);
+		// glBindTexture(GL_TEXTURE_2D, texture1);
+		// glActiveTexture(GL_TEXTURE1);
+		// glBindTexture(GL_TEXTURE_2D, texture2);
+		// glBindVertexArray(VAO);
+		// glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 0); 
+	    // glUniform1i(glGetUniformLocation(my_shader.ID, "normalMap"), 1);
+		// my_shader.setBool("nm",false);
 		
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
+		// for (int i = 0; i < shapes.size(); i++)
+		// {
+		// 	my_shader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
+		// 	my_shader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
+		// 	my_shader.setVec3("material.specular", 1.0f, 1.5f, 1.5f);
+		// 	my_shader.setFloat("material.shininess", 2.0f);
+		// 	glActiveTexture(GL_TEXTURE3);
+		// 	glBindTexture(GL_TEXTURE_2D,texture3);
+		// 	glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 3);
+		// 	glBindVertexArray(obj_VAO_l[i]);
+		// 	my_shader.setBool("nm",false);
+		// 	glDrawArrays(GL_TRIANGLES,0,shapes[i].mesh.indices.size());
+
+		// }
+
+
 		for (int i = 0; i < shapes.size(); i++)
 		{
 			my_shader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
 			my_shader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
 			my_shader.setVec3("material.specular", 1.0f, 1.5f, 1.5f);
 			my_shader.setFloat("material.shininess", 2.0f);
-			glActiveTexture(GL_TEXTURE3);
-			glBindTexture(GL_TEXTURE_2D,texture3);
-			glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 3);
-			glBindVertexArray(obj_VAO_l[i]);
+			glActiveTexture(GL_TEXTURE4);
+			glBindTexture(GL_TEXTURE_2D,texture4);
+			glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 4);
+			glBindVertexArray(obj_VAO_2[i]);
 			my_shader.setBool("nm",false);
-			glDrawArrays(GL_TRIANGLES,0,shapes[i].mesh.indices.size());
+			glDrawArrays(GL_TRIANGLES,0,shapes2[i].mesh.indices.size());
 
 		}
+
+
 		lampShader.use();
         model = glm::mat4(1.0f);
 
