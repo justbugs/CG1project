@@ -1,4 +1,4 @@
-C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/glad.dir
-C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/rebuild_cache.dir
-C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/opengl-basic.dir
-C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/edit_cache.dir
+C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/glad.dir
+C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/opengl-basic.dir
+C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/edit_cache.dir

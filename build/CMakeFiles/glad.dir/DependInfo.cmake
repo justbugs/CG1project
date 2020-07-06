@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/3rdLibs/glad/src/glad.c" "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/glad.dir/3rdLibs/glad/src/glad.c.obj"
+  "C:/Users/Oliver/Desktop/CG1project/3rdLibs/glad/src/glad.c" "C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/glad.dir/3rdLibs/glad/src/glad.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

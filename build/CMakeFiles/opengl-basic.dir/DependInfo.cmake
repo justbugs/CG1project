@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/src/main.cpp" "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/opengl-basic.dir/src/main.cpp.obj"
-  "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/src/tiny_obj_loader.cc" "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/opengl-basic.dir/src/tiny_obj_loader.cc.obj"
+  "C:/Users/Oliver/Desktop/CG1project/src/main.cpp" "C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/opengl-basic.dir/src/main.cpp.obj"
+  "C:/Users/Oliver/Desktop/CG1project/src/tiny_obj_loader.cc" "C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/opengl-basic.dir/src/tiny_obj_loader.cc.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,7 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/CMakeFiles/glad.dir/DependInfo.cmake"
+  "C:/Users/Oliver/Desktop/CG1project/build/CMakeFiles/glad.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

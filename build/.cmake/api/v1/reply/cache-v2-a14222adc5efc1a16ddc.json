@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build"
+			"value" : "c:/Users/Oliver/Desktop/CG1project/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows"
+			"value" : "C:/Users/Oliver/Desktop/CG1project"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1371,7 +1371,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build"
+			"value" : "C:/Users/Oliver/Desktop/CG1project/build"
 		},
 		{
 			"name" : "opengl-basic_SOURCE_DIR",
@@ -1383,7 +1383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows"
+			"value" : "C:/Users/Oliver/Desktop/CG1project"
 		}
 	],
 	"kind" : "cache",

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows
+# Install script for directory: C:/Users/Oliver/Desktop/CG1project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Oliver/Desktop/CG1project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

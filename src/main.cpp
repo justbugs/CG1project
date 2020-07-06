@@ -408,9 +408,9 @@ int main()
 	// Or you can change it if you like.                                                                           //
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	glm::vec3 pointLightPositions[] = {
-		glm::vec3(5.7f,  5.2f,  2.0f),
+		glm::vec3(-2,  4,  10),
 		glm::vec3(2.3f, -3.3f, -4.0f),
-		glm::vec3(-4.0f,  2.0f, -12.0f),
+		glm::vec3(12.0f,  2.0f, 2.0f),
 		glm::vec3(0.0f,  0.0f, -3.0f)
 	};
 	my_shader.use();
@@ -453,8 +453,9 @@ int main()
 
 	my_shader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
 	my_shader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
-	my_shader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-	my_shader.setFloat("material.shininess", 2.0f);
+	my_shader.setVec3("material.specular", 0.3f, 0.3f, 0.3f);
+	my_shader.setVec3("material.rim", 0.5f, 0.5f, 0.5f);
+	my_shader.setFloat("material.shininess", 32.0f);
 	unsigned int VBO, VAO;
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -554,7 +555,7 @@ int main()
         
         // We now draw as many light bulbs as we have point lights.
         glBindVertexArray(lightVAO);
-        for (GLuint i = 0; i < 4; i++)
+        for (GLuint i = 0; i < 1; i++)
         {
             model = glm::mat4();
             model = glm::translate(model, pointLightPositions[i]);

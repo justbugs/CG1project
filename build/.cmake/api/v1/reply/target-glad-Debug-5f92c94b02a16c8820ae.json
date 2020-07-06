@@ -70,11 +70,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/3rdLibs/glfw-3.3.2/include"
+					"path" : "C:/Users/Oliver/Desktop/CG1project/3rdLibs/glfw-3.3.2/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/Oliver/Desktop/cs171-assignment2-Oliverdddddddd/opengl-basic-windows/3rdLibs/glad/include"
+					"path" : "C:/Users/Oliver/Desktop/CG1project/3rdLibs/glad/include"
 				}
 			],
 			"language" : "C",
