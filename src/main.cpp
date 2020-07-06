@@ -598,20 +598,20 @@ int main()
 		
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
-		// for (int i = 0; i < shapes.size(); i++)
-		// {
-		// 	my_shader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
-		// 	my_shader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
-		// 	my_shader.setVec3("material.specular", 1.0f, 1.5f, 1.5f);
-		// 	my_shader.setFloat("material.shininess", 2.0f);
-		// 	glActiveTexture(GL_TEXTURE3);
-		// 	glBindTexture(GL_TEXTURE_2D,texture3);
-		// 	glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 3);
-		// 	glBindVertexArray(obj_VAO_l[i]);
-		// 	my_shader.setBool("nm",false);
-		// 	glDrawArrays(GL_TRIANGLES,0,shapes[i].mesh.indices.size());
+		for (int i = 0; i < shapes.size(); i++)
+		{
+			my_shader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
+			my_shader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
+			my_shader.setVec3("material.specular", 1.0f, 1.5f, 1.5f);
+			my_shader.setFloat("material.shininess", 2.0f);
+			glActiveTexture(GL_TEXTURE3);
+			glBindTexture(GL_TEXTURE_2D,texture3);
+			glUniform1i(glGetUniformLocation(my_shader.ID, "ourTexture"), 3);
+			glBindVertexArray(obj_VAO_l[i]);
+			my_shader.setBool("nm",false);
+			glDrawArrays(GL_TRIANGLES,0,shapes[i].mesh.indices.size());
 
-		// }
+		}
 
 
 		for (int i = 0; i < shapes.size(); i++)
